@@ -21,3 +21,18 @@ def load_config() -> AppConfig:
         rag_embedding_model=config("RAG_EMBEDDING_MODEL")
     )
 
+@dataclass(frozen=True)
+class OutConfig:
+    api_list: tuple[str, ...]
+    api_key_list: tuple[dict[str, str], ...]
+
+
+def load_out_config(*api_names: str) -> OutConfig:
+    return OutConfig(
+        api_list=tuple(api_names),
+        api_key_list=tuple(
+            {name: config(f"{name.upper()}_API_KEY")} for name in api_names
+        ),
+    )
+
+
