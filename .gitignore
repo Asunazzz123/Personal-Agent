@@ -1,0 +1,5 @@
+.vscode
+.env
+api-test.py
+output/
+!output/.gitkeep

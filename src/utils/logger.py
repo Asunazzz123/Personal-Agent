@@ -38,3 +38,12 @@ def setup_logger(name: str, level: int = logging.INFO) -> logging.Logger:
 
     logger.propagate = False
     return logger
+
+def setup_tool_logger(tool:str, level: int = logging.INFO) -> logging.Logger:
+    setup_logger("tool", level = level)
+    logger = logging.getLogger(f"tool.{tool}")
+    if logger.handlers:
+        return logger
+    logger.setLevel(level)
+    logger.propagate = True
+    return logger
