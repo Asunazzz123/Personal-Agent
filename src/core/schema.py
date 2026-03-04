@@ -19,3 +19,9 @@ class AgentRequest(BaseModel):
 class TraceStep(BaseModel):
     step_id: int
     
+
+
+class ApiRequest(BaseModel):
+    request_url: str
+    api: str
+    params: Dict[str, Any]
