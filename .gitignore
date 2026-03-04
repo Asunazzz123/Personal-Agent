@@ -3,3 +3,4 @@
 api-test.py
 output/
 !output/.gitkeep
+src/agent/skills/README.md
