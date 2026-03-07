@@ -1,10 +1,17 @@
 import requests
 from src.core.config import load_single_api_config
-from src.core.schema import ApiRequest
+from src.core.schema import ApiRequest, SafetyStatus
 from src.utils.logger import setup_tool_logger
-_amap_logger = setup_tool_logger("AMAP")
-config = load_single_api_config("AMAP")
+from src.utils.access import  access_validator, load_access_policy
 
+_amap_logger = setup_tool_logger("AMAP")
+config = load_single_api_config("AMAP") 
+access_policy = load_access_policy("AMAP")
+tool_list = ["get_city_code"]
+
+
+
+@access_validator
 def get_city_code(city_name: str)-> str:
     base_url = config.base_url
     api_key = config.api_key

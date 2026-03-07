@@ -47,3 +47,12 @@ def setup_tool_logger(tool:str, level: int = logging.INFO) -> logging.Logger:
     logger.setLevel(level)
     logger.propagate = True
     return logger
+
+def setup_access_logger(level: int = logging.INFO) -> logging.Logger:
+    setup_logger("access", level = level)
+    logger = logging.getLogger("access")
+    if logger.handlers:
+        return logger
+    logger.setLevel(level)
+    logger.propagate = True
+    return logger

@@ -25,3 +25,8 @@ class ApiRequest(BaseModel):
     request_url: str
     api: str
     params: Dict[str, Any]
+
+
+class SafetyStatus(BaseModel):
+    tool_name: str
+    access_policy: str = "Denied" or "Once" or "Whitelist" or "Onced"

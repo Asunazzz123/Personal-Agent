@@ -1,0 +1,25 @@
+[
+    {
+        "group_name": "amap",
+        "policy":"Whitelist",
+        "tools":[
+            {"tool_name": "get_city_code","description":"获取城市代码，输入城市名称，输出对应的城市代码。","policy":"Whitelist"}
+        ]
+    },
+    {
+        "group_name": "serp",
+        "policy":"Whitelist",
+        "tools":[
+            {"tool_name": "finance","description":"谷歌股市工具，输入股票代码获得股票信息","policy":"Whitelist"}
+        ]
+    },
+    {
+        "group_name": "uapi",
+        "policy":"Whitelist",
+        "tools":[
+            {"tool_name": "get_weather","description":"获取天气信息，输入城市名称，输出对应的天气信息。","policy":"Whitelist"},
+            {"tool_name": "web_to_markdown","description":"将网页内容转换为markdown格式,输入网页URL,输出markdown文本。","policy":"Whitelist"}
+        ]
+    }
+
+]
